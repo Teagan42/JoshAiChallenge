@@ -1,0 +1,19 @@
+{
+  "name": "joshai-challenge",
+  "version": "1.0.0",
+  "description": "Simple application to pull a list of light from a Phillip's Hue and display state changes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teagan42/JoshAiChallenge.git"
+  },
+  "author": "Teagan Glenn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Teagan42/JoshAiChallenge/issues"
+  },
+  "homepage": "https://github.com/Teagan42/JoshAiChallenge#readme"
+}
