@@ -31,10 +31,10 @@ node src/index.js [options]
 ```
 
 Where `options` can be:  
-`-d` : debug mode
-`-h host` : specify the host domain name for the Hue Bridge
-`-p port` : Specify the host port for the Hue Bridge
-`-u user` : Specify the username to run commands against
+`-d` : debug mode  
+`-h host` : specify the host domain name for the Hue Bridge  
+`-p port` : Specify the host port for the Hue Bridge  
+`-u user` : Specify the username to run commands against  
 
 For usage help:
 ```
