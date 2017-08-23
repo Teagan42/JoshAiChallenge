@@ -5,28 +5,36 @@ let Light = require('../../models/Light');
 
 const VALID_LIGHT_ATTRIBUTES = [
     'id',
-    'name',
-    'type',
-    'uniqueid',
-    'manufacturername',
-    'modelid',
-    'productid',
-    'swversion',
-    'swconfigid'
+    'name'
+
+    // Valid attributes per https://developers.meethue.com/documentation/lights-api
+    // Unused in this demo application
+
+    // 'type',
+    // 'uniqueid',
+    // 'manufacturername',
+    // 'luminaireuniqueid',
+    // 'modelid',
+    // 'productid',
+    // 'swversion',
+    // 'pointsymbol'
 ];
 
 const VALID_LIGHT_STATE_ATTRIBUTES = [
     'on',
-    'reachable',
-    'bri',
-    'colormode',
-    'hue',
-    'sat',
-    'xy',
-    'ct',
-    'transitiontime',
-    'alert',
-    'effect'
+    'bri'
+
+    // Valid state attibutes per https://developers.meethue.com/documentation/lights-api
+    // Unused in this demo application
+
+    // 'reachable',
+    // 'colormode',
+    // 'hue',
+    // 'sat',
+    // 'xy',
+    // 'ct',
+    // 'alert',
+    // 'effect'
 ];
 
 class LightCommand extends Command {
@@ -52,6 +60,7 @@ class LightCommand extends Command {
             return attributes;
         }
 
+        // Only store valid attributes to our light
         for (let key of VALID_LIGHT_ATTRIBUTES) {
             if (key in result) {
                 attributes[key] = result[key];
@@ -68,6 +77,7 @@ class LightCommand extends Command {
             return state;
         }
 
+        // Only store valid attributes to our state
         for (let key of VALID_LIGHT_STATE_ATTRIBUTES) {
             if (key in result) {
                 state[key] = result[key];

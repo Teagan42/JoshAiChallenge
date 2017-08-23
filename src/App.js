@@ -6,6 +6,7 @@ const MONITORED_STATES = [
     'brightness'
 ];
 
+// Polling too often causes connection issues
 function sleep(milliseconds) {
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
@@ -112,12 +113,17 @@ class App {
                 lights.forEach(apiLight => {
                     apiIds.push(apiLight.id);
                     let stateLight = this._lightStates[apiLight.id];
+
                     if (!stateLight) {
+                        // No existing light, add to our state
                         this._addNewLight(apiLight);
                     } else {
+                        // Existing light, check for changes
                         this._checkLightChanged(apiLight, stateLight);
                     }
                 });
+
+                // Check if we are missing any lights
                 Object.keys(this._lightStates).forEach(id => {
                     if (!apiIds.includes(id)) {
                         this._removeLight(this._lightStates[id]);

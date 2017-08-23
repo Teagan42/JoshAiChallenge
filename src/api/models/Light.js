@@ -47,10 +47,11 @@ class Light {
         return this.id;
     }
 
-    details(opts) {
-        opts = opts || DEFAULT_DETAILS;
+    details(detailFields) {
+        detailFields = detailFields || DEFAULT_DETAILS;
+        
         const details = {};
-        opts.forEach(option =>  {
+        detailFields.forEach(option =>  {
             details[option] = this[option];
         });
 
