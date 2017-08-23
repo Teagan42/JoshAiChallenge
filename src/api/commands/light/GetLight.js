@@ -9,7 +9,7 @@ class GetLight extends LightCommand {
         super(client);
         this.lightId = Number(lightId);
     }
-    
+
     invoke() {
         let options = {
             uri: `${this.basePath}/${this.lightId}`,
