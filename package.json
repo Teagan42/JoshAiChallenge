@@ -10,7 +10,9 @@
   "dependencies": {
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
-    "technicolor-logger": "~1.0.0"
+    "technicolor-logger": "~1.0.0",
+    "command-line-args": "~4.0.7",
+    "command-line-usage": "~4.0.1"
   },
   "repository": {
     "type": "git",
