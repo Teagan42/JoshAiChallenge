@@ -81,8 +81,6 @@ const LOGGER_CONFIG = {
 
 logger.init(LOGGER_CONFIG);
 
-logger.debug(JSON.stringify(options, null, 2));
-
 logger.debug('Initializing Hue Client');
 
 const client = new HueClient(
