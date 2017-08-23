@@ -17,12 +17,12 @@ class GetLight extends LightCommand {
                 'Content-Type': 'application/json'
             },
             json: true,
-            timeout: 1000,
+            timeout: 10000
         };
 
         return request(options)
             .then(result => {
-                result.id = this.lightId;
+                result.id = String(this.lightId);
 
                 return this.buildLight(result);
             });

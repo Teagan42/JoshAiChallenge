@@ -15,13 +15,13 @@ class GetLights extends LightCommand {
                 'Content-Type': 'application/json'
             },
             json: true,
-            timeout: 1000
+            timeout: 10000
         };
 
         return request(options)
             .then(result => {
                 return Object.keys(result).map(lightId => {
-                    result[lightId].id = lightId;
+                    result[lightId].id = String(lightId);
 
                     return this.buildLight(result[lightId]);
                 });

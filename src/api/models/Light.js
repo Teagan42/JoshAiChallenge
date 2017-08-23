@@ -35,10 +35,6 @@ class Light {
         this.state.set('on', Boolean(value));
     }
 
-    get reachable() {
-        return this.state.get('reachable');
-    }
-
     get brightness() {
         return this.state.get('bri');
     }

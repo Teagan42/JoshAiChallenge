@@ -20,18 +20,6 @@ class Attributes {
 
     set(attribute, value) {
         this.attributes[attribute] = value;
-
-        this.changed[attribute] = attribute;
-    }
-
-    getChanged() {
-        let changed = {};
-
-        for (let attribute in this.changed) {
-            changed[attribute] = this.attributes[attribute];
-        }
-
-        return changed;
     }
 
     resetChanged() {
