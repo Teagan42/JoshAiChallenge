@@ -16,7 +16,8 @@ class GetLight extends LightCommand {
             headers: {
                 'Content-Type': 'application/json'
             },
-            json: true
+            json: true,
+            timeout: 1000,
         };
 
         return request(options)

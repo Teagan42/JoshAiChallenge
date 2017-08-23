@@ -15,7 +15,7 @@ class GetLights extends LightCommand {
                 'Content-Type': 'application/json'
             },
             json: true,
-            timeout: 10000
+            timeout: 1000
         };
 
         console.log('Options', options);
