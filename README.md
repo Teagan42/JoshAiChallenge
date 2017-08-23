@@ -55,6 +55,7 @@ npm run test
 ## Future improvements
 
 * Negative unit tests
+* Testing against the user resource
 * Testing against the application output
 * Adding support for other light resource commands such as adding, deleting and updating lights
 * Adding support for other resource types such as groups, schedules, etc.
