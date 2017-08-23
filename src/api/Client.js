@@ -1,6 +1,8 @@
 'use strict';
 
-let Lights = require('./resources/Lights')
+let Lights = require('./resources/Lights');
+let Users = require('./resources/Users');
+
 
 const DEFAULT_CONFIG = {
     host:     undefined,
@@ -15,6 +17,7 @@ class Client {
         this.config    = Object.assign({}, DEFAULT_CONFIG, config);
         this._logger = logger;
         this._lights = new Lights(this);
+        this._users = new Users(this);
     }
 
     get logger() {
@@ -55,6 +58,14 @@ class Client {
 
     get lights() {
         return this._lights;
+    }
+
+    get users() {
+        return this._users;
+    }
+
+    isAuthorizedUser() {
+
     }
 }
 

@@ -57,6 +57,14 @@ class App {
             });
     }
 
+    _checkUser() {
+        return this.client.users.isAuthorized()
+            .catch(err => {
+                // Unauthorized, try to create the user
+                return this.client.users.createUser();
+            });
+    }
+
     _firstRun() {
         this._isFirstRun = false;
         this.logger.debug('Retrieving lights...');
@@ -143,7 +151,11 @@ class App {
         sleep(500);
         this.logger.debug('Run Invoked');
         if (this._isFirstRun) {
-            this._firstRun();
+            this._checkUser()
+                .then((username) => {
+                    this.client.username = username;
+                    return this._firstRun();
+                });
         } else {
             this._checkLightsForStateChange();
         }

@@ -38,6 +38,12 @@ const CLI_PARAM_DEFINITIONS = [
         alias: '?',
         type: Boolean,
         defaultValue: false
+    }, {
+        name: 'color',
+        description: 'Color of the main output in the console [black, gray, white, etc.]',
+        alias: 'c',
+        type: String,
+        defaultValue: 'black'
     }
 ];
 const CLI_PARAM_USAGE = [
@@ -71,13 +77,16 @@ if (options.debug) {
 const LOGGER_CONFIG = {
     loggers: [{
         name: 'console',
-        levels: consoleLogLevels,
-        colors: [{
-            level: 'INFO',
-            color: 'black'
-        }]
+        levels: consoleLogLevels
     }]
 };
+
+if (options.color) {
+    LOGGER_CONFIG.loggers[0].colors = [{
+        level: 'INFO',
+        color: options.color
+    }];
+}
 
 logger.init(LOGGER_CONFIG);
 
