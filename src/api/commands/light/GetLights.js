@@ -18,11 +18,8 @@ class GetLights extends LightCommand {
             timeout: 1000
         };
 
-        console.log('Options', options);
-
         return request(options)
             .then(result => {
-                console.log('Got', result);
                 return Object.keys(result).map(lightId => {
                     result[lightId].id = lightId;
 

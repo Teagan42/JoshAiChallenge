@@ -15,7 +15,6 @@ class Lights extends BaseResource {
     }
 
     getAll() {
-        console.log('Command: getAllLights');
         return new GetLights(this.client).invoke();
     }
 
