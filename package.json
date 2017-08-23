@@ -4,7 +4,7 @@
   "description": "Simple application to pull a list of light from a Phillip's Hue and display state changes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node node_modules/mocha/bin/mocha --recursive -c",
     "start": "node src/index.js",
     "debug": "node src/index.js -d"
   },
@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/Teagan42/JoshAiChallenge/issues"
   },
-  "homepage": "https://github.com/Teagan42/JoshAiChallenge#readme"
+  "homepage": "https://github.com/Teagan42/JoshAiChallenge#readme",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "mockery": "^2.1.0"
+  }
 }

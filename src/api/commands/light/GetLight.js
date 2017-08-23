@@ -7,7 +7,7 @@ class GetLight extends LightCommand {
     constructor(client,
                 lightId) {
         super(client);
-        this.lightId = Number(lightId);
+        this.lightId = String(lightId);
     }
 
     invoke() {
@@ -22,7 +22,7 @@ class GetLight extends LightCommand {
 
         return request(options)
             .then(result => {
-                result.id = String(this.lightId);
+                result.id = this.lightId;
 
                 return this.buildLight(result);
             });

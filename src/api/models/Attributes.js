@@ -3,7 +3,6 @@
 class Attributes {
     constructor(attributes, defaults) {
         this.replace(Object.assign({}, defaults, attributes));
-        this.resetChanged();
     }
 
     replace(attributes) {
@@ -20,10 +19,6 @@ class Attributes {
 
     set(attribute, value) {
         this.attributes[attribute] = value;
-    }
-
-    resetChanged() {
-        this.changed = {};
     }
 }
 
