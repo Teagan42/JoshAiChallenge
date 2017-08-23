@@ -41,5 +41,3 @@ const app = new App(
 
 logger.debug('Starting App');
 app.run();
-
-while (true) {}
