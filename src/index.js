@@ -71,7 +71,11 @@ if (options.debug) {
 const LOGGER_CONFIG = {
     loggers: [{
         name: 'console',
-        levels: consoleLogLevels
+        levels: consoleLogLevels,
+        colors: [{
+            level: 'INFO',
+            color: 'black'
+        }]
     }]
 };
 
